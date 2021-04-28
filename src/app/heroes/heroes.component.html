@@ -1,0 +1,10 @@
+<!-- 補間バインディングの中、パイプ演算子 ( | ) の直後にある単語uppercaseは、
+   組み込みのUppercasePipeを起動します -->
+<h3>{{hero.name | uppercase}} Details</h3>
+<div><span>id: </span>{{hero.id}}</div>
+<div><span>name: </span>{{hero.name}}</div>
+
+<div>
+  <label for="name">Hero name: </label>
+  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div>
