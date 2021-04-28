@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from "../hero";
+import { HEROES } from "../mock-heroes";
 
 // @Componentは、コンポーネントのAngularメタデータを指定するデコレーター関数です
 // 一部のメタデータは、コンポーネントクラスに追加した@Componentデコレーター内にあります。
@@ -11,10 +12,13 @@ import { Hero } from "../hero";
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  hero: Hero = {
-    id: 1,
-    name: 'Windstorm',
-  };
+  // アプリを起動した際、 selectedHero は 意図的に undefined です
+  selectedHero: Hero;
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+
+  heroes = HEROES;
 
   constructor() { }
 
