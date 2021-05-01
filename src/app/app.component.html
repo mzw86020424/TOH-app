@@ -5,5 +5,7 @@
   <a routerLink="/dashboard">dashboard</a>
   <a routerLink="/heroes">Heroes</a>
 </nav>
+<!-- RouterModuleをエクスポートしたAppRoutingModuleをAppModuleがインポートしているので、
+  このRouterOutletは、このAppComponentで利用できるようになったルーターのディレクティブのひとつです -->
 <router-outlet></router-outlet>
 <app-messages></app-messages>

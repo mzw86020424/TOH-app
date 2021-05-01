@@ -1,11 +1,8 @@
-<!-- 補間バインディングの中、パイプ演算子 ( | ) の直後にある単語uppercaseは、組み込みのUppercasePipeを起動します -->
 <h2>My Heroes</h2>
 <ul class="heroes">
-  <!-- ユーザーが <li> をクリックすると、Angularは onSelect(hero) 式を実行します -->
-  <!-- Angularの クラスバインディング は条件に応じたCSSクラスの追加と削除ができます -->
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
