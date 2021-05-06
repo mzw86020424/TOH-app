@@ -1,0 +1,14 @@
+<div id="search-component">
+  <label for="search-box">Hero Search</label>
+  <!-- テキストボックスの入力値をローカル変数に格納することができます。
+    そしてコンポーネントに直接渡すことが可能です #searchBox-->
+  <input #searchBox id="search-box" (input)="search(searchBox.value)">
+
+  <ul class="search-result">
+    <!-- *ngForはObservableでは何もできないので、 パイプ文字（ |）に続けて asyncを使用します。
+    これにより、AngularのAsyncPipeが識別され、Observableが自動的にサブスクライブされるため、 コンポーネントクラスでこれを行う必要はありません。 -->
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
+    </li>
+  </ul>
+</div>
